@@ -19,6 +19,7 @@ const Character = "#"
 
 var TerminalWidth int
 
+// CheckError prints a message and the error if any
 func CheckError(message string, err error) {
 	if err != nil {
 		println("ERROR " + message + ": " + err.Error())
@@ -26,6 +27,7 @@ func CheckError(message string, err error) {
 	}
 }
 
+// Center prints a centered message in terminal
 func Center(message string) {
 	fmt.Println(strings.Repeat(Character, TerminalWidth))
 	text := 2 + len(message)
@@ -35,11 +37,13 @@ func Center(message string) {
 	fmt.Println(strings.Repeat(Character, TerminalWidth))
 }
 
+// Title prints a title on terminal
 func Title(message string) {
 	after := TerminalWidth - 3 - len(message)
 	fmt.Println(Character + " " + message + " " + strings.Repeat(Character, after))
 }
 
+// ResponsePrinter prints response
 func ResponsePrinter(response *http.Response) error {
 	Title("RESPONSE")
 	httputil.DumpResponse(response, true)
@@ -51,6 +55,7 @@ func ResponsePrinter(response *http.Response) error {
 	return nil
 }
 
+// RequestHandler returns a handler for proxy
 func RequestHandler(address string) func(response http.ResponseWriter, request *http.Request) {
 	url, err := url.Parse(address)
 	CheckError("invalid redirection address", err)
