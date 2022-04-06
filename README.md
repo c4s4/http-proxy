@@ -70,4 +70,6 @@ Date: Wed, 06 Apr 2022 13:40:44 GMT
 
 This is very handy to debug HTTP.
 
+You can print help with `http-proxy -help` and version with `http-proxy -version`.
+
 *Enjoy!*

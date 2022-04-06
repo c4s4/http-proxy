@@ -15,6 +15,9 @@ import (
 	"golang.org/x/crypto/ssh/terminal"
 )
 
+// Version as printed -version option
+var Version = "UNKNOWN"
+
 // Character is the one used for titles
 const Character = "#"
 
@@ -80,7 +83,12 @@ func RequestHandler(address string) func(response http.ResponseWriter, request *
 func main() {
 	port := flag.Int("port", 8000, "port proxy is listening")
 	addr := flag.String("addr", "http://127.0.0.1:8080", "redirection address")
+	version := flag.Bool("version", false, "print version")
 	flag.Parse()
+	if *version {
+		println(Version)
+		os.Exit(0)
+	}
 	var err error
 	TerminalWidth, _, err = terminal.GetSize(0)
 	CheckError("getting terminal width", err)
