@@ -22,7 +22,17 @@ sh -c "$(wget -O - https://sweetohm.net/dist/http-proxy/install)"
 
 ### Binary package
 
-Otherwise, you can download latest binary archive at <https://github.com/c4s4/http-proxy/releases>. Unzip the archive, put the binary of your platform somewhere in your *PATH* and rename it *http-proxy*.
+Otherwise, you can download latest binary at <https://github.com/c4s4/http-proxy/releases>. Get binary for your platform, move it somewhere in your *PATH* and rename it *http-proxy*.
+
+### Go developer
+
+If Go is installed on your machine, you can build and install *http-proxy* typing:
+
+```
+$ go install github.com/c4s4/http-proxy@latest
+```
+
+Note that in this case, version returned with `http-proxy -version` will be *UNKNOWN*.
 
 ## Usage
 
