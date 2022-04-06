@@ -15,8 +15,10 @@ import (
 	"golang.org/x/crypto/ssh/terminal"
 )
 
+// Character is the one used for titles
 const Character = "#"
 
+// TerminalWidth is the current width of terminal
 var TerminalWidth int
 
 // CheckError prints a message and the error if any
