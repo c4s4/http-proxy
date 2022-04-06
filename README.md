@@ -78,7 +78,7 @@ Date: Wed, 06 Apr 2022 13:40:44 GMT
 {"status":"ok"}
 ```
 
-This is very handy to debug HTTP.
+This is very handy to debug HTTP. Note that these logs are not exactly request and response, as described in [this documentation](https://pkg.go.dev/net/http/httputil#DumpRequest).
 
 You can print help with `http-proxy -help` and version with `http-proxy -version`.
 
