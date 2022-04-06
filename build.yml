@@ -1,3 +1,6 @@
 doc:     Build file for HTTP Logger Proxy
 extends: golang
 default: run
+
+properties:
+  BRANCH_MASTER: 'main'
